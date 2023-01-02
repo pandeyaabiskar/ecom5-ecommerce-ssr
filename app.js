@@ -6,7 +6,12 @@ const cors = require('cors')
 
 app.use(cors())
 
+//Setup which view engine to use
 app.set('view engine', 'hbs');
+//If you want to change the name of views directory
+app.set('views', './templates');
+//To access the static files in server
+app.use(express.static('./public'))
 
 app.use('/products', productRouter)
 

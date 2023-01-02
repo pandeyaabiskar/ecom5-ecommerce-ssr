@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         })
         res.json(filteredProducts)
     } else {
-        res.render('index', { data : productData })
+        res.render('index', { productData })
     }
 })
 

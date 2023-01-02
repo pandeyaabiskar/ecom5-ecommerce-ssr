@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Doko Online Store</title>  
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
 <nav class="product-filter">
@@ -39,17 +39,19 @@
 </nav>
 
 <section class="products">
+    {{#each productData}}
   <div class="product-card">
     <a href="/details.html">
     <div class="product-image">
-      <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg">
+      <img src="{{this.image}}">
     </div>
     <div class="product-info">
-      <h5>Clothes</h5>
-      <h6>$100</h6>
+      <h5>{{this.title}}</h5>
+      <h6>${{this.price}}</h6>
     </div>
   </a>
   </div>
+    {{/each}}
 </section>
 </body>
 </html>
