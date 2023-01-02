@@ -3,7 +3,15 @@ const productData = require('../data/productData.json')
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.json(productData)
+    const { category } = req.query;
+    if (category) {
+        const filteredProducts = productData.filter((product) => {
+            return product.category === category
+        })
+        res.json(filteredProducts)
+    } else {
+        res.render('index', { data : productData })
+    }
 })
 
 router.get('/:productID', (req, res) => {
