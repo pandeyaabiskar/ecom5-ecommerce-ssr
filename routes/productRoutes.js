@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         const filteredProducts = productData.filter((product) => {
             return product.category === category
         })
-        res.json(filteredProducts)
+        res.render('index', { productData: filteredProducts })
     } else {
         res.render('index', { productData })
     }
